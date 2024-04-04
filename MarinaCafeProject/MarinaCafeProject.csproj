@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5FED2D43-8E3B-4B25-967E-DDFB26DD74B9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>MarinaCafeProject</RootNamespace>
+    <AssemblyName>MarinaCafeProject</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>marina-ico1 %287%29.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Licensing, Version=3.2.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b" />
+    <Reference Include="Bunifu.UI.WinForms.1.5.3">
+      <HintPath>..\..\..\..\..\Documents\UI\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>..\..\..\..\..\Documents\UI\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox">
+      <HintPath>..\..\..\..\..\Documents\UI\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
+      <HintPath>..\..\..\..\..\Documents\UI\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox">
+      <HintPath>..\..\..\..\..\Documents\UI\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+      <HintPath>..\..\..\..\..\Documents\UI\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+      <HintPath>..\..\..\..\..\Documents\UI\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
+      <HintPath>..\..\..\..\..\Documents\UI\Bunifu UI WinForms v4.1.1\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.3\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CafeArea.cs" />
+    <Compile Include="CafeCategory.cs" />
+    <Compile Include="CafeCreateTableArea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CafeCreateTableArea.Designer.cs">
+      <DependentUpon>CafeCreateTableArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CafeProductComputation.cs" />
+    <Compile Include="CafeSaleHistoryScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CafeSaleHistoryScreen.Designer.cs">
+      <DependentUpon>CafeSaleHistoryScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CafeTable.cs" />
+    <Compile Include="CafeTableConfigure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CafeTableConfigure.Designer.cs">
+      <DependentUpon>CafeTableConfigure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CafeTableList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CafeTableList.Designer.cs">
+      <DependentUpon>CafeTableList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category\CategoryCreateScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category\CategoryCreateScreen.Designer.cs">
+      <DependentUpon>CategoryCreateScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category\CategoryDeleteScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category\CategoryDeleteScreen.Designer.cs">
+      <DependentUpon>CategoryDeleteScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category\CategoryEditOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category\CategoryEditOptions.Designer.cs">
+      <DependentUpon>CategoryEditOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category\CategoryListScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category\CategoryListScreen.Designer.cs">
+      <DependentUpon>CategoryListScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Category\CategoryOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category\CategoryOptions.Designer.cs">
+      <DependentUpon>CategoryOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoScreen.Designer.cs">
+      <DependentUpon>InfoScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MoneyChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MoneyChange.Designer.cs">
+      <DependentUpon>MoneyChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewSale.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSale.Designer.cs">
+      <DependentUpon>NewSale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewSaleChangeQuantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewSaleChangeQuantity.Designer.cs">
+      <DependentUpon>NewSaleChangeQuantity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\ExportOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options\ExportOptions.Designer.cs">
+      <DependentUpon>ExportOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Launcher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Launcher.Designer.cs">
+      <DependentUpon>Launcher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PartPaymentScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartPaymentScreen.Designer.cs">
+      <DependentUpon>PartPaymentScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentAmountDetail.cs" />
+    <Compile Include="PaymentProduct.cs" />
+    <Compile Include="PaymentScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentScreen.Designer.cs">
+      <DependentUpon>PaymentScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\ProductCreateScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\ProductCreateScreen.Designer.cs">
+      <DependentUpon>ProductCreateScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\ProductDeleteScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\ProductDeleteScreen.Designer.cs">
+      <DependentUpon>ProductDeleteScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\ProductEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\ProductEdit.Designer.cs">
+      <DependentUpon>ProductEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\ProductListScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\ProductListScreen.Designer.cs">
+      <DependentUpon>ProductListScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\ProductOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\ProductOptions.Designer.cs">
+      <DependentUpon>ProductOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options\ProductSettingScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Options\ProductSettingScreen.Designer.cs">
+      <DependentUpon>ProductSettingScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaleHistoryDetailsScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaleHistoryDetailsScreen.Designer.cs">
+      <DependentUpon>SaleHistoryDetailsScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SaleHistoryDetailsXdeep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaleHistoryDetailsXdeep.Designer.cs">
+      <DependentUpon>SaleHistoryDetailsXdeep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SaleHistorySummaryScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaleHistorySummaryScreen.Designer.cs">
+      <DependentUpon>SaleHistorySummaryScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SaleProductCS.cs" />
+    <Compile Include="Session\SaleMainScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Session\SaleMainScreen.Designer.cs">
+      <DependentUpon>SaleMainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SaleProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SaleProduct.Designer.cs">
+      <DependentUpon>SaleProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableManagement\TableOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableManagement\TableOptions.Designer.cs">
+      <DependentUpon>TableOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableManagement\TableUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TableManagement\TableUC.Designer.cs">
+      <DependentUpon>TableUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TableManagement\TableMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableManagement\TableMove.Designer.cs">
+      <DependentUpon>TableMove.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CafeCreateTableArea.resx">
+      <DependentUpon>CafeCreateTableArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CafeSaleHistoryScreen.resx">
+      <DependentUpon>CafeSaleHistoryScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CafeTableConfigure.resx">
+      <DependentUpon>CafeTableConfigure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CafeTableList.resx">
+      <DependentUpon>CafeTableList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category\CategoryCreateScreen.resx">
+      <DependentUpon>CategoryCreateScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category\CategoryDeleteScreen.resx">
+      <DependentUpon>CategoryDeleteScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category\CategoryEditOptions.resx">
+      <DependentUpon>CategoryEditOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category\CategoryListScreen.resx">
+      <DependentUpon>CategoryListScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Category\CategoryOptions.resx">
+      <DependentUpon>CategoryOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoScreen.resx">
+      <DependentUpon>InfoScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MoneyChange.resx">
+      <DependentUpon>MoneyChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSale.resx">
+      <DependentUpon>NewSale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewSaleChangeQuantity.resx">
+      <DependentUpon>NewSaleChangeQuantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\ExportOptions.resx">
+      <DependentUpon>ExportOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Launcher.resx">
+      <DependentUpon>Launcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartPaymentScreen.resx">
+      <DependentUpon>PartPaymentScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentScreen.resx">
+      <DependentUpon>PaymentScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\ProductCreateScreen.resx">
+      <DependentUpon>ProductCreateScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\ProductDeleteScreen.resx">
+      <DependentUpon>ProductDeleteScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\ProductEdit.resx">
+      <DependentUpon>ProductEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\ProductListScreen.resx">
+      <DependentUpon>ProductListScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\ProductOptions.resx">
+      <DependentUpon>ProductOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Options\ProductSettingScreen.resx">
+      <DependentUpon>ProductSettingScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SaleHistoryDetailsScreen.resx">
+      <DependentUpon>SaleHistoryDetailsScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaleHistoryDetailsXdeep.resx">
+      <DependentUpon>SaleHistoryDetailsXdeep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaleHistorySummaryScreen.resx">
+      <DependentUpon>SaleHistorySummaryScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Session\SaleMainScreen.resx">
+      <DependentUpon>SaleMainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaleProduct.resx">
+      <DependentUpon>SaleProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableManagement\TableMove.resx">
+      <DependentUpon>TableMove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableManagement\TableOptions.resx">
+      <DependentUpon>TableOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TableManagement\TableUC.resx">
+      <DependentUpon>TableUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\start-session.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\warning2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\con-session-soft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\start-session-soft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\new-payment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\show-summary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\end-session.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\payment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\food.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\lira-ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\payment-cash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\payment-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\tip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\discount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\tl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\tl-charge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\pdf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\sale-history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\UI_images\table-management.png" />
+    <None Include="bin\Debug\UI_images\add-table.png" />
+    <None Include="bin\Debug\UI_images\add-table-hover.png" />
+    <None Include="bin\Debug\UI_images\table-emty.png" />
+    <None Include="bin\Debug\UI_images\table-full.png" />
+    <None Include="bin\Debug\UI_images\table-reserved.png" />
+    <Content Include="hnet.com-image.ico" />
+    <Content Include="ico.ico" />
+    <Content Include="logo_blue_rnw_icon.ico" />
+    <Content Include="marina-ico1 %287%29.ico" />
+    <Content Include="marina-ico1.ico" />
+    <Content Include="marina-ico2.ico" />
+    <Content Include="marina-ico3.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
